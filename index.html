@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Performance Mobile Powerwash | Mobile Pressure Washing Calgary</title>
+<meta name="description" content="Performance Mobile Powerwash: family-run mobile pressure washing in Calgary, Alberta. Fleet washing, heavy equipment cleaning, industrial and commercial pressure washing, and watering services.">
+<link rel="icon" href="images/pmp-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#002A5E;
+  --navy-2:#0B3B78;
+  --ink:#0A1220;
+  --ink-2:#111C2E;
+  --steel:#C7CCD3;
+  --steel-2:#E6E8EB;
+  --paper:#F3F4F2;
+  --ice:#8DB6E8;
+  --line:rgba(255,255,255,.14);
+  --wide:'Archivo',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --sans:'IBM Plex Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1280px,92vw);margin:0 auto}
+.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem}
+.wide{font-family:var(--wide);font-stretch:125%;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+.chrome{background:linear-gradient(180deg,#fff 0%,#d9dce0 45%,#8f959d 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--wide);font-stretch:110%;font-weight:700;text-transform:uppercase;font-size:.82rem;letter-spacing:.06em;padding:1rem 1.4rem;border:1.5px solid currentColor;transition:.25s}
+.btn svg{width:16px;height:16px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-solid{background:var(--steel-2);color:var(--ink);border-color:var(--steel-2)}
+.btn-solid:hover{background:#fff}
+.btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+/* utility bar */
+.util{background:var(--ink);color:var(--steel);border-bottom:1px solid var(--line)}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;height:40px}
+.util a:hover{color:#fff}
+.util .l{display:flex;gap:2rem}
+.util .soc{display:flex;gap:1.1rem;align-items:center}
+.util .soc svg{width:15px;height:15px;fill:currentColor}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(10,18,32,.94);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:82px}
+.logo img{height:46px;width:auto}
+nav ul{list-style:none;display:flex;gap:2.2rem;align-items:center}
+nav a{font-family:var(--wide);font-stretch:112%;font-weight:600;text-transform:uppercase;font-size:.78rem;letter-spacing:.08em;color:var(--steel);transition:color .2s}
+nav a:hover{color:#fff}
+.dd{position:relative}
+.dd>a::after{content:"";display:inline-block;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);margin-left:.5rem}
+.dd-menu{position:absolute;top:calc(100% + 28px);left:-1rem;background:var(--ink);border:1px solid var(--line);min-width:220px;padding:.6rem 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.2s}
+.dd:hover .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-menu::before{content:"";position:absolute;top:-30px;left:0;right:0;height:30px}
+.dd-menu a{display:flex;justify-content:space-between;padding:.6rem 1rem}
+.dd-menu a span{font-family:var(--mono);font-size:.65rem;color:var(--ice)}
+.dd-menu a:hover{background:var(--navy)}
+.hdr-cta{display:flex;align-items:center;gap:1.4rem}
+.hdr-phone{font-family:var(--mono);font-size:.85rem;color:#fff}
+.hdr-phone small{display:block;font-size:.6rem;color:var(--ice);letter-spacing:.16em;text-transform:uppercase}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.burger svg{width:28px;height:28px}
+
+/* hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;min-height:calc(100vh - 122px);max-height:860px}
+.hero-copy{position:relative;z-index:2;padding:4.5rem 0 3.5rem;display:flex;flex-direction:column;justify-content:center;padding-left:max(4vw,calc((100vw - 1280px)/2))}
+.hero-tag{display:flex;align-items:center;gap:.8rem;color:var(--ice);margin-bottom:2rem}
+.hero-tag i{width:38px;height:1.5px;background:var(--ice)}
+.hero h1{font-size:clamp(2.6rem,5.4vw,5.6rem);font-weight:850;margin-bottom:2rem}
+.hero h1 span{display:block}
+.hero h1 .out{color:transparent;-webkit-text-stroke:1.5px var(--steel)}
+.hero p.lead{max-width:470px;color:var(--steel);font-size:1.08rem;margin-bottom:2.4rem;padding-left:1.1rem;border-left:2px solid var(--navy-2)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-media{position:relative;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,18,32,.55),rgba(10,18,32,0) 40%),linear-gradient(0deg,rgba(10,18,32,.6),transparent 35%)}
+.plate{position:absolute;right:max(4vw,calc((100vw - 1280px)/2));bottom:2.2rem;z-index:3;display:grid;grid-template-columns:repeat(3,auto);background:rgba(10,18,32,.82);backdrop-filter:blur(8px);border:1px solid var(--line)}
+.plate div{padding:1rem 1.5rem;border-right:1px solid var(--line)}
+.plate div:last-child{border-right:0}
+.plate b{display:block;font-family:var(--wide);font-stretch:118%;font-weight:800;font-size:1.05rem;text-transform:uppercase}
+.plate span{color:var(--ice)}
+
+/* ticker */
+.ticker{background:var(--navy);color:#fff;overflow:hidden;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.ticker-track{display:flex;gap:3rem;white-space:nowrap;padding:1.05rem 0;animation:tick 38s linear infinite;width:max-content}
+.ticker-track span{font-family:var(--wide);font-stretch:120%;font-weight:700;text-transform:uppercase;font-size:.95rem;display:flex;align-items:center;gap:3rem}
+.ticker-track span::after{content:"";width:9px;height:9px;background:var(--ice);transform:rotate(45deg)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* about */
+.about{padding:7rem 0 6rem;background:var(--paper)}
+.about-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;border-bottom:2px solid var(--ink);padding-bottom:1.6rem;margin-bottom:3.5rem}
+.about-head h2{font-size:clamp(2.2rem,5.8vw,5.4rem);font-weight:850;color:var(--ink)}
+.about-head h2 em{font-style:normal;color:var(--navy)}
+.about-head .mono{color:var(--navy);white-space:nowrap}
+.about-body{display:grid;grid-template-columns:1.25fr 1fr;gap:4rem;align-items:start}
+.about-photo{position:relative}
+.about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;clip-path:polygon(0 0,100% 0,100% 88%,90% 100%,0 100%)}
+.stamp{position:absolute;top:-1.4rem;right:-1.4rem;background:var(--navy);color:#fff;width:150px;height:150px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transform:rotate(-6deg);box-shadow:0 18px 40px rgba(0,42,94,.3)}
+.stamp b{font-family:var(--wide);font-stretch:120%;font-size:1rem;line-height:1.05;text-transform:uppercase;font-weight:800}
+.stamp small{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--ice);margin-top:.5rem;text-transform:uppercase}
+.caption{display:flex;justify-content:space-between;margin-top:.9rem;color:#5b6472}
+.about-text p{font-size:1.15rem;color:#2a3342;margin-bottom:1.4rem}
+.about-text p.big{font-size:1.5rem;line-height:1.4;color:var(--ink);font-weight:500}
+.about-list{list-style:none;margin:2rem 0 2.4rem;border-top:1px solid #cfd3d8}
+.about-list li{display:flex;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid #cfd3d8;font-weight:500}
+.about-list li span{font-family:var(--mono);font-size:.72rem;color:var(--navy)}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:var(--navy);border-color:var(--navy)}
+
+/* services accordion */
+.services{background:var(--ink);color:#fff;padding:6rem 0 0}
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem}
+.svc-head h2{font-size:clamp(2rem,4.4vw,3.8rem);font-weight:850}
+.svc-head p{max-width:380px;color:var(--steel)}
+.panels{display:flex;height:620px;border-top:1px solid var(--line)}
+.panel{position:relative;flex:1;overflow:hidden;border-right:1px solid var(--line);transition:flex .6s cubic-bezier(.6,0,.2,1);cursor:pointer}
+.panel:last-child{border-right:0}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.85) brightness(.55);transition:filter .6s,transform 1.2s}
+.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,18,32,.95) 0%,rgba(10,18,32,.2) 55%,rgba(10,18,32,.4) 100%)}
+.panels:hover .panel{flex:.7}
+.panels .panel:hover,.panels:not(:hover) .panel.on{flex:2.4}
+.panel:hover img,.panels:not(:hover) .panel.on img{filter:none;transform:scale(1.04)}
+.panel-num{position:absolute;top:1.6rem;left:1.6rem;z-index:2;font-family:var(--mono);font-size:.8rem;color:var(--ice)}
+.panel-body{position:absolute;left:1.6rem;right:1.6rem;bottom:2rem;z-index:2}
+.panel-body h3{font-family:var(--wide);font-stretch:115%;text-transform:uppercase;font-weight:800;font-size:1.45rem;line-height:1.02;margin-bottom:1rem;max-width:340px}
+.panel-body a{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;border-bottom:1px solid var(--ice);padding-bottom:.3rem;color:#fff;opacity:0;transform:translateY(10px);transition:.4s .15s}
+.panel:hover .panel-body a,.panels:not(:hover) .panel.on .panel-body a{opacity:1;transform:none}
+
+/* features */
+.features{background:var(--steel-2);border-bottom:1px solid #cdd1d6}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.feat{padding:3.2rem 2rem 3rem;border-right:1px solid #cdd1d6;position:relative}
+.feat:first-child{border-left:1px solid #cdd1d6}
+.feat img{width:54px;height:54px;margin-bottom:1.6rem}
+.feat h3{font-family:var(--wide);font-stretch:112%;text-transform:uppercase;font-weight:800;font-size:1.05rem;margin-bottom:.7rem;color:var(--ink)}
+.feat p{color:#3c4552;font-size:.95rem}
+.feat .mono{position:absolute;top:1.4rem;right:1.4rem;color:#8a929d}
+
+/* why */
+.why{background:var(--navy);color:#fff;padding:7rem 0;position:relative;overflow:hidden}
+.why::before{content:"PMP";position:absolute;right:-2vw;bottom:-6vw;font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:28vw;line-height:1;color:rgba(255,255,255,.04);pointer-events:none}
+.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:5rem;position:relative}
+.why h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:850;margin:1.2rem 0 2.6rem}
+.big-num{display:flex;align-items:flex-end;gap:1rem;margin-bottom:2rem}
+.big-num b{font-family:var(--wide);font-stretch:125%;font-weight:900;font-size:clamp(6rem,12vw,10rem);line-height:.8}
+.big-num span{font-family:var(--wide);font-stretch:115%;text-transform:uppercase;font-weight:700;font-size:1.1rem;line-height:1.1;padding-bottom:.4rem}
+.why-photo{margin-top:2.4rem;clip-path:polygon(0 0,100% 0,100% 100%,8% 100%,0 90%)}
+.why-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.check{align-self:start;border:1px solid rgba(255,255,255,.22);background:rgba(10,18,32,.25)}
+.check-top{display:flex;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.22);color:var(--ice)}
+.check ul{list-style:none;display:grid;grid-template-columns:1fr 1fr}
+.check li{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.4rem;border-bottom:1px solid rgba(255,255,255,.12);font-weight:500}
+.check li:nth-child(odd){border-right:1px solid rgba(255,255,255,.12)}
+.check li .box{flex:none;width:22px;height:22px;border:1.5px solid var(--ice);display:grid;place-items:center}
+.check li .box svg{width:13px;height:13px;stroke:var(--ice)}
+.check li em{font-style:normal;font-family:var(--mono);font-size:.65rem;color:rgba(255,255,255,.4);margin-left:auto}
+.check-foot{padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+
+/* gallery */
+.gallery{padding:6.5rem 0;background:var(--paper)}
+.gal-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2.6rem;gap:2rem}
+.gal-head h2{font-size:clamp(2rem,4.6vw,4rem);font-weight:850}
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:12px}
+.gal-grid figure{position:relative;overflow:hidden;background:#ddd}
+.gal-grid figure:first-child{grid-row:span 2}
+.gal-grid figure:nth-child(4){grid-column:span 2}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gal-grid figure:hover img{transform:scale(1.05)}
+.gal-grid figcaption{position:absolute;left:0;bottom:0;background:var(--ink);color:#fff;padding:.5rem .8rem}
+
+/* quote */
+.quote{background:var(--ink);color:#fff;padding:6.5rem 0}
+.quote-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;align-items:start}
+.quote h2{font-size:clamp(2.2rem,4.6vw,4rem);font-weight:850;margin:1.2rem 0 1.6rem}
+.quote-intro{color:var(--steel);max-width:430px;margin-bottom:2.6rem}
+.cline{display:block;padding:1.3rem 0;border-top:1px solid var(--line)}
+.cline:last-of-type{border-bottom:1px solid var(--line)}
+.cline small{display:block;color:var(--ice);margin-bottom:.3rem}
+.cline b{font-family:var(--wide);font-stretch:112%;font-weight:700;font-size:clamp(1.1rem,2vw,1.6rem)}
+a.cline:hover b{color:var(--ice)}
+form{background:var(--ink-2);border:1px solid var(--line);padding:2.4rem}
+.form-top{display:flex;justify-content:space-between;color:var(--ice);margin-bottom:1.8rem;padding-bottom:1rem;border-bottom:1px dashed rgba(255,255,255,.2)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:.45rem}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1.5px solid rgba(255,255,255,.25);color:#fff;font:inherit;padding:.6rem 0;outline:none;transition:border-color .2s}
+.field select option{color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ice)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips label{margin:0}
+.chips input{display:none}
+.chips span{display:inline-block;font-family:var(--sans);font-size:.85rem;letter-spacing:0;text-transform:none;padding:.5rem .9rem;border:1px solid rgba(255,255,255,.25);cursor:pointer;color:var(--steel);transition:.2s}
+.chips input:checked+span{background:var(--steel-2);color:var(--ink);border-color:var(--steel-2)}
+form .btn{width:100%;justify-content:center;margin-top:.8rem;cursor:pointer;font-size:.88rem}
+
+/* footer */
+footer{background:#060C16;color:var(--steel);padding:5rem 0 0}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3rem;padding-bottom:4rem}
+.f-logo img{height:58px;width:auto;margin-bottom:1.4rem}
+.f-grid p{font-size:.95rem;max-width:300px}
+.f-grid h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);margin-bottom:1.2rem;font-weight:500}
+.f-grid ul{list-style:none}
+.f-grid li{margin-bottom:.7rem}
+.f-grid a:hover{color:#fff}
+.f-soc{display:flex;gap:.6rem;margin-top:1.6rem}
+.f-soc a{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;transition:.2s}
+.f-soc a:hover{background:var(--navy);border-color:var(--navy)}
+.f-soc svg{width:16px;height:16px;fill:currentColor}
+.f-bottom{border-top:1px solid var(--line);padding:1.5rem 0;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+.f-bottom a{color:#fff;border-bottom:1px solid var(--ice)}
+.mbar{display:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1080px){
+  nav,.hdr-phone{display:none}
+  .burger{display:block}
+  nav.open{display:block;position:absolute;top:82px;left:0;right:0;background:var(--ink);border-bottom:1px solid var(--line);padding:1rem 4vw 1.6rem}
+  nav.open ul{flex-direction:column;align-items:flex-start;gap:0}
+  nav.open li{width:100%;border-bottom:1px solid var(--line)}
+  nav.open a{display:block;padding:1rem 0}
+  nav.open .dd-menu{position:static;opacity:1;visibility:visible;transform:none;border:0;padding:0 0 .6rem 1rem;background:none}
+  nav.open .dd-menu::before{display:none}
+  .hero-grid{grid-template-columns:1fr;max-height:none;min-height:0}
+  .hero-copy{padding:3.5rem 4vw 3rem}
+  .hero-media{height:52vh;clip-path:polygon(0 8%,100% 0,100% 100%,0 100%)}
+  .plate{position:relative;right:auto;bottom:auto;margin:-3rem 4vw 2rem;grid-template-columns:1fr}
+  .plate div{border-right:0;border-bottom:1px solid var(--line)}
+  .about-body,.why-grid,.quote-grid{grid-template-columns:1fr;gap:3rem}
+  .panels{flex-direction:column;height:auto}
+  .panels .panel{flex:none!important;height:300px;border-right:0;border-bottom:1px solid var(--line)}
+  .panel img{filter:brightness(.7)}
+  .panel-body a{opacity:1;transform:none}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .feat{border-bottom:1px solid #cdd1d6}
+  .feat:nth-child(3){border-left:1px solid #cdd1d6}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .util .l a:nth-child(2),.util .soc{display:none}
+  .hdr-cta .btn{display:none}
+  .about-head,.svc-head,.gal-head{flex-direction:column;align-items:flex-start}
+  .stamp{width:118px;height:118px;right:-.4rem}
+  .feat-grid{grid-template-columns:1fr}
+  .feat{border-left:1px solid #cdd1d6}
+  .check ul{grid-template-columns:1fr}
+  .check li:nth-child(odd){border-right:0}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gal-grid figure{height:200px}
+  .gal-grid figure:first-child{grid-row:auto;grid-column:span 2;height:260px}
+  .gal-grid figure:nth-child(4){grid-column:span 2}
+  .row{grid-template-columns:1fr}
+  form{padding:1.6rem}
+  .f-grid{grid-template-columns:1fr}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;bottom:0;left:0;right:0;z-index:60}
+  .mbar a{text-align:center;padding:1rem;font-family:var(--wide);font-stretch:110%;font-weight:700;text-transform:uppercase;font-size:.8rem;background:var(--navy);color:#fff}
+  .mbar a:last-child{background:var(--steel-2);color:var(--ink)}
+  footer{padding-bottom:3.4rem}
+}
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap">
+    <div class="l mono">
+      <a href="tel:4039266869">(403) 926-6869</a>
+      <a href="mailto:performance.wash@gmail.com">performance.wash@gmail.com</a>
+      <span>Calgary, Alberta</span>
+    </div>
+    <div class="soc">
+      <a href="https://www.reddit.com/user/Ryan_Wash" target="_blank" rel="noopener" aria-label="Reddit"><svg viewBox="0 0 24 24"><path d="M24 11.8a2.6 2.6 0 0 0-4.5-1.8 12.8 12.8 0 0 0-6.9-2.2l1.2-5.5 3.8.8a1.9 1.9 0 1 0 .2-1l-4.3-.9a.5.5 0 0 0-.6.4l-1.3 6.2a12.8 12.8 0 0 0-7 2.2A2.6 2.6 0 1 0 1.7 14a5 5 0 0 0 0 .8c0 4 4.6 7.2 10.3 7.2s10.3-3.2 10.3-7.2a5 5 0 0 0 0-.8 2.6 2.6 0 0 0 1.7-2.2ZM6 13.8a1.9 1.9 0 1 1 1.9 1.9A1.9 1.9 0 0 1 6 13.8Zm10.6 5a6.8 6.8 0 0 1-4.6 1.4 6.8 6.8 0 0 1-4.6-1.4.5.5 0 0 1 .7-.7 5.9 5.9 0 0 0 3.9 1.2 5.9 5.9 0 0 0 3.9-1.2.5.5 0 1 1 .7.7Zm-.4-3.1a1.9 1.9 0 1 1 1.9-1.9 1.9 1.9 0 0 1-1.9 1.9Z"/></svg></a>
+      <a href="https://www.instagram.com/pmpwash/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1ZM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0Zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z"/></svg></a>
+      <a href="https://www.linkedin.com/company/71981081" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1ZM7.1 20.5H3.6V9h3.5v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="https://pmpwash.ca/" class="logo"><img src="images/pmp-logo.png" alt="Performance Mobile Powerwash"></a>
+    <nav id="nav">
+      <ul>
+        <li class="dd"><a href="https://pmpwash.ca/services">Services</a>
+          <div class="dd-menu">
+            <a href="https://pmpwash.ca/fleets">Fleets <span>01</span></a>
+            <a href="https://pmpwash.ca/properties">Properties <span>02</span></a>
+            <a href="https://pmpwash.ca/heavy-equipment">Heavy Equipment <span>03</span></a>
+            <a href="https://pmpwash.ca/watering">Watering <span>04</span></a>
+          </div>
+        </li>
+        <li><a href="https://pmpwash.ca/gallery">Gallery</a></li>
+        <li><a href="https://pmpwash.ca/about">About</a></li>
+        <li><a href="https://pmpwash.ca/contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-cta">
+      <a class="hdr-phone" href="tel:4039266869"><small>Call the crew</small>(403) 926-6869</a>
+      <a href="#quote" class="btn btn-solid">Get a Quote</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h12"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-tag mono"><i></i>Mobile Pressure Washing · Calgary, AB</div>
+      <h1 class="wide">
+        <span class="chrome">Clean Equipment.</span>
+        <span class="chrome">Clean Fleets.</span>
+        <span class="chrome">Clean Sites.</span>
+        <span class="out">Reliable Results.</span>
+      </h1>
+      <p class="lead">Serving the Calgary area with mobile pressure washing services for over 20 years.</p>
+      <div class="hero-btns">
+        <a href="https://pmpwash.ca/fleets" class="btn btn-solid">Fleets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://pmpwash.ca/heavy-equipment" class="btn btn-ghost">Heavy Equipment</a>
+        <a href="#quote" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </div>
+    <div class="hero-media"><img src="images/pmp-fleet.jpg" alt="Performance Mobile Powerwash truck on a Calgary fleet yard"></div>
+  </div>
+  <div class="plate">
+    <div><span class="mono">Experience</span><b>Almost 30 Yrs</b></div>
+    <div><span class="mono">All Weather</span><b>Heated Washes</b></div>
+    <div><span class="mono">Protected</span><b>WCB · Insured</b></div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Mobile Pressure Washing</span><span>Fleet Washing</span><span>Heavy Equipment Cleaning</span><span>Industrial / Commercial Pressure Washing</span><span>Construction Site Watering</span><span>Heated Washes Year-Round</span>
+    <span>Mobile Pressure Washing</span><span>Fleet Washing</span><span>Heavy Equipment Cleaning</span><span>Industrial / Commercial Pressure Washing</span><span>Construction Site Watering</span><span>Heated Washes Year-Round</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-head rv">
+      <h2 class="wide">Performance<br><em>Mobile Powerwash</em></h2>
+      <span class="mono">Family-run · Calgary, Alberta</span>
+    </div>
+    <div class="about-body">
+      <div class="about-photo rv">
+        <img src="images/crew-onsite.jpg" alt="The Performance Mobile Powerwash team with their wash truck">
+        <div class="stamp"><b>Family<br>Run &amp;<br>Owned</b><small>Calgary, AB</small></div>
+        <div class="caption mono"><span>The PMP crew</span><span>On site</span></div>
+      </div>
+      <div class="about-text rv">
+        <p class="big">Performance Mobile Powerwash is a locally owned and operated family business proudly based in Calgary, Alberta.</p>
+        <p>For over 20 years, we have been helping businesses, contractors, property owners, and homeowners keep their equipment, fleets, and job sites clean, safe, and well-maintained.</p>
+        <ul class="about-list">
+          <li>Fleet washing <span>01</span></li>
+          <li>Heavy equipment pressure washing <span>02</span></li>
+          <li>Industrial &amp; commercial cleaning <span>03</span></li>
+          <li>Construction site &amp; landscaping watering <span>04</span></li>
+          <li>Other mobile wash services <span>05</span></li>
+        </ul>
+        <a href="#quote" class="btn btn-dark">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap svc-head rv">
+    <div>
+      <span class="mono" style="color:var(--ice)">What we wash</span>
+      <h2 class="wide" style="margin-top:1rem">Four Ways<br>We Get It Clean</h2>
+    </div>
+    <p>Whenever the time and wherever the place, we come to you with prompt and professional pressure washing services.</p>
+  </div>
+  <div class="panels">
+    <div class="panel on">
+      <img src="images/pmp-fleet.jpg" alt="Fleet trucks ready for pressure washing">
+      <span class="panel-num">01 / Fleets</span>
+      <div class="panel-body"><h3>Small to Large Fleet Pressure Washing</h3><a href="https://pmpwash.ca/fleets">Learn More &rarr;</a></div>
+    </div>
+    <div class="panel">
+      <img src="images/heavy-equipment.jpg" alt="Pressure washing a Volvo articulated hauler">
+      <span class="panel-num">02 / Heavy Equipment</span>
+      <div class="panel-body"><h3>Heavy Equipment Cleaning</h3><a href="https://pmpwash.ca/heavy-equipment">Learn More &rarr;</a></div>
+    </div>
+    <div class="panel">
+      <img src="images/watering.jpg" alt="PMP truck at a Calgary construction site">
+      <span class="panel-num">03 / Watering</span>
+      <div class="panel-body"><h3>Landscaping / Construction Watering Services</h3><a href="https://pmpwash.ca/watering">Learn More &rarr;</a></div>
+    </div>
+    <div class="panel">
+      <img src="images/properties.jpg" alt="Crew scrubbing a commercial building wall">
+      <span class="panel-num">04 / Properties</span>
+      <div class="panel-body"><h3>Commercial / Industrial Property Restoration</h3><a href="https://pmpwash.ca/properties">Learn More &rarr;</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap feat-grid">
+    <div class="feat rv"><span class="mono">A</span><img src="images/icon-mobile.png" alt=""><h3>Fully Mobile Services</h3><p>Whenever the time and wherever the place, we come to you with prompt and professional pressure washing services!</p></div>
+    <div class="feat rv"><span class="mono">B</span><img src="images/icon-leaf.png" alt=""><h3>Non-Harmful Chemicals</h3><p>We use non-corrosive paint-friendly soaps for all our washes, keeping whatever needs to be washed clean and protected.</p></div>
+    <div class="feat rv"><span class="mono">C</span><img src="images/icon-snow.png" alt=""><h3>Year-Round Services</h3><p>Rain, snow, wind, or shine, whatever the weather, we provide heated pressure washing services all year-round.</p></div>
+    <div class="feat rv"><span class="mono">D</span><img src="images/icon-cost.png" alt=""><h3>Cost and Time Effective</h3><p>We guarantee that by choosing PMP, you'll be choosing the most cost and time-effective solution to all your pressure washing needs!</p></div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap why-grid">
+    <div class="rv">
+      <span class="mono" style="color:var(--ice)">Why choose Performance?</span>
+      <h2 class="wide">Built for the<br>Dirty Jobs</h2>
+      <div class="big-num"><b class="chrome">30</b><span>Almost 30 years<br>of experience</span></div>
+      <div class="why-photo"><img src="images/properties.jpg" alt="PMP crew working from a lift on a commercial building"></div>
+    </div>
+    <div class="check rv">
+      <div class="check-top mono"><span>PMP Crew Checklist</span><span>12 / 12</span></div>
+      <ul id="checks"></ul>
+      <div class="check-foot">
+        <span class="mono" style="color:var(--steel)">Signed off: 100% Satisfaction guaranteed</span>
+        <a href="#quote" class="btn btn-solid">Book a Wash</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="gal-head rv">
+      <div><span class="mono" style="color:var(--navy)">Gallery</span><h2 class="wide" style="margin-top:1rem">Check Out<br>Our Work!</h2></div>
+      <a href="https://pmpwash.ca/gallery" class="btn btn-dark">View Full Gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="gal-grid rv">
+      <figure><img src="images/heavy-equipment.jpg" alt="Heavy equipment pressure washing"><figcaption class="mono">Heavy Equipment</figcaption></figure>
+      <figure><img src="images/properties.jpg" alt="Commercial property cleaning"><figcaption class="mono">Properties</figcaption></figure>
+      <figure><img src="images/watering.jpg" alt="Construction site service"><figcaption class="mono">Watering</figcaption></figure>
+      <figure><img src="images/pmp-fleet.jpg" alt="Fleet washing yard"><figcaption class="mono">Fleets</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="quote">
+  <div class="wrap quote-grid">
+    <div class="rv">
+      <span class="mono" style="color:var(--ice)">Contact Us</span>
+      <h2 class="wide">Tell Us What<br><span class="chrome">Needs a Wash</span></h2>
+      <p class="quote-intro">Fleets, heavy equipment, properties or site watering. Send the details and the PMP team will get back to you.</p>
+      <a class="cline" href="tel:4039266869"><small class="mono">Phone</small><b>(403) 926-6869</b></a>
+      <a class="cline" href="mailto:performance.wash@gmail.com"><small class="mono">Email</small><b>performance.wash@gmail.com</b></a>
+      <div class="cline"><small class="mono">Based in</small><b>Calgary, Alberta</b></div>
+    </div>
+    <form class="rv" action="mailto:performance.wash@gmail.com" method="post" enctype="text/plain">
+      <div class="form-top mono"><span>Quote Request</span><span>PMP</span></div>
+      <div class="row">
+        <div class="field"><label for="n">Name</label><input id="n" name="Name" required></div>
+        <div class="field"><label for="c">Company</label><input id="c" name="Company"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="p">Phone</label><input id="p" name="Phone" type="tel" required></div>
+        <div class="field"><label for="e">Email</label><input id="e" name="Email" type="email" required></div>
+      </div>
+      <div class="field"><label>Service</label>
+        <div class="chips">
+          <label><input type="checkbox" name="Service" value="Fleets" checked><span>Fleets</span></label>
+          <label><input type="checkbox" name="Service" value="Heavy Equipment"><span>Heavy Equipment</span></label>
+          <label><input type="checkbox" name="Service" value="Properties"><span>Properties</span></label>
+          <label><input type="checkbox" name="Service" value="Watering"><span>Watering</span></label>
+        </div>
+      </div>
+      <div class="field"><label for="m">Job details</label><textarea id="m" name="Details" rows="3" placeholder="Location, number of units, timing..."></textarea></div>
+      <button type="submit" class="btn btn-solid">Send Request <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="https://pmpwash.ca/" class="f-logo"><img src="images/pmp-logo.png" alt="Performance Mobile Powerwash"></a>
+        <p>Locally owned and operated family business proudly based in Calgary, Alberta.</p>
+        <div class="f-soc">
+          <a href="https://www.reddit.com/user/Ryan_Wash" target="_blank" rel="noopener" aria-label="Reddit"><svg viewBox="0 0 24 24"><path d="M24 11.8a2.6 2.6 0 0 0-4.5-1.8 12.8 12.8 0 0 0-6.9-2.2l1.2-5.5 3.8.8a1.9 1.9 0 1 0 .2-1l-4.3-.9a.5.5 0 0 0-.6.4l-1.3 6.2a12.8 12.8 0 0 0-7 2.2A2.6 2.6 0 1 0 1.7 14a5 5 0 0 0 0 .8c0 4 4.6 7.2 10.3 7.2s10.3-3.2 10.3-7.2a5 5 0 0 0 0-.8 2.6 2.6 0 0 0 1.7-2.2ZM6 13.8a1.9 1.9 0 1 1 1.9 1.9A1.9 1.9 0 0 1 6 13.8Zm10.6 5a6.8 6.8 0 0 1-4.6 1.4 6.8 6.8 0 0 1-4.6-1.4.5.5 0 0 1 .7-.7 5.9 5.9 0 0 0 3.9 1.2 5.9 5.9 0 0 0 3.9-1.2.5.5 0 1 1 .7.7Zm-.4-3.1a1.9 1.9 0 1 1 1.9-1.9 1.9 1.9 0 0 1-1.9 1.9Z"/></svg></a>
+          <a href="https://www.instagram.com/pmpwash/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.2.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3c1.2-.1 1.6-.1 4.8-.1ZM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0Zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z"/></svg></a>
+          <a href="https://www.linkedin.com/company/71981081" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1ZM7.1 20.5H3.6V9h3.5v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="https://pmpwash.ca/fleets">Fleets</a></li>
+          <li><a href="https://pmpwash.ca/watering">Watering</a></li>
+          <li><a href="https://pmpwash.ca/heavy-equipment">Heavy Equipment</a></li>
+          <li><a href="https://pmpwash.ca/properties">Properties</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://pmpwash.ca/gallery">Gallery</a></li>
+          <li><a href="https://pmpwash.ca/about">About</a></li>
+          <li><a href="https://pmpwash.ca/contact-us">Contact Us</a></li>
+          <li><a href="https://pmpwash.ca/residential-terms-of-service">Residential Terms of Service Agreement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:4039266869">(403) 926-6869</a></li>
+          <li><a href="mailto:performance.wash@gmail.com">performance.wash@gmail.com</a></li>
+          <li>Calgary, Alberta</li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>&copy; 2023 Performance Mobile Powerwash Inc. All Rights Reserved.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar"><a href="tel:4039266869">Call Now</a><a href="#quote">Get a Quote</a></div>
+
+<script>
+const items=["Almost 30 years of experience","Family-run and owned","Competitive rates","Experienced and devoted team","State of the art equipment","Environmentally friendly","Heated washes","Fall arrest certified","Boom and scissor lift certified","WCB covered","Fully insured","100% Satisfaction guaranteed"];
+document.getElementById('checks').innerHTML=items.map((t,i)=>`<li><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>${t}<em>${String(i+1).padStart(2,'0')}</em></li>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('.panel').forEach(p=>p.addEventListener('click',()=>{document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));p.classList.add('on')}));
+</script>
+</body>
+</html>
